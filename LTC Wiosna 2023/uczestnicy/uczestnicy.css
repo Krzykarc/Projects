@@ -1,0 +1,144 @@
+/* #1E1D1A */
+
+/* UCZESTNICY */
+
+.dla-uczestnikow {
+  color: #f1f1f1;
+  overflow-x: hidden;
+}
+.uczestnicy__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.uczestnicy__header .main-nav__list--a {
+  margin: 0;
+  background-color: #ece7e5;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+  border-radius: 1.2rem;
+  font-size: 2.4rem;
+}
+.uczestnicy__header .main-nav__list--a:hover,
+.uczestnicy__header .main-nav__list--a:active {
+  text-decoration: none;
+}
+
+.main-title.uczestnicy__header {
+  margin: 0;
+}
+
+/* KLANY ------------------------------------------------- */
+
+.klany {
+  background-color: #1e1d1a;
+}
+.klany__wstep {
+  padding: 6.4rem 4.8rem;
+  text-align: center;
+}
+.klany__wybor {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: center;
+  padding: 0 2.4rem 9.6rem 2.4rem;
+}
+
+.klany__lista {
+  padding: 9.6rem 0;
+}
+.wybor__klan {
+  border: 0.1rem solid #f1f1f1;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s all;
+  width: 25%;
+}
+.wybor__klan:hover {
+  transform: translateY(-0.8rem);
+}
+.wybor__klan--kirin:hover {
+  border: 0.1rem solid #ffdfa8;
+}
+.wybor__klan--kitsune:hover {
+  border: 0.1rem solid #d60604;
+}
+.wybor__klan--loong:hover {
+  border: 0.1rem solid #6bba75;
+}
+.wybor__klan--wukong:hover {
+  border: 0.1rem solid #4280c2;
+}
+
+.wybor__klan img {
+  width: 100%;
+}
+
+.klany__klan {
+  display: flex;
+  align-items: center;
+}
+
+.klany__obrazek {
+  transition: 0.6s all;
+}
+.not-active .klany__obrazek {
+  opacity: 0;
+}
+.not-active .klany__obrazek:nth-child(even) {
+  transform: translate(25%, -10%);
+}
+.not-active .klany__obrazek:nth-child(odd) {
+  transform: translate(-25%, -10%);
+}
+.klany__obrazek img {
+  max-width: 84rem;
+}
+.klany__kontent {
+  margin: 2.4rem;
+  padding: 1.2rem 3.2rem;
+  opacity: 1;
+  transition: 0.4s all;
+}
+.not-active .klany__kontent {
+  opacity: 0;
+}
+.klany__tytul {
+  font-weight: 400;
+  font-size: 4.4rem;
+  padding: 1.2rem;
+  margin: 2.4rem 0;
+  position: relative;
+}
+.klany__tytul::after {
+  content: "";
+  height: 0.2rem;
+  width: 100%;
+  background-color: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s all;
+}
+.not-active .klany__tytul::after {
+  width: 0;
+}
+.klany__opis p {
+  margin-bottom: 1.2rem;
+}
+.klany__klan--kirin .klany__tytul,
+.klany__klan--kirin .klany__opiekun {
+  color: #ffdfa8;
+}
+.klany__klan--kitsune .klany__tytul,
+.klany__klan--kitsune .klany__opiekun {
+  color: #d60604;
+}
+.klany__klan--loong .klany__tytul,
+.klany__klan--loong .klany__opiekun {
+  color: #6bba75;
+}
+.klany__klan--wukong .klany__tytul,
+.klany__klan--wukong .klany__opiekun {
+  color: #4280c2;
+}

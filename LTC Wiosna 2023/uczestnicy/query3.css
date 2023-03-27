@@ -1,0 +1,430 @@
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+@media (max-width: 84em) {
+  html {
+    /* 9px / 16px  */
+    font-size: 56.25%;
+  }
+}
+/**************************/
+/* BELOW 1232px (Landscape Tablets) */
+/**************************/
+@media (max-width: 77em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .kontakt {
+    max-height: 90vh;
+  }
+  .kontakt__header {
+    margin-top: 2.4rem;
+    padding: 1.2rem;
+  }
+  .kontakt__footer {
+    padding: 2.4rem 2.4rem 0 2.4rem;
+  }
+  .active.dark-box__kontakt {
+    padding: 3.2rem;
+  }
+}
+/**************************/
+/* BELOW 1104px (Landscape Tablets) */
+/**************************/
+@media (max-width: 69em) {
+  .hero {
+    flex-direction: column;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+  .hero__img {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 1.2rem;
+    width: 100%;
+  }
+  .main-nav {
+    border-bottom-left-radius: 1.2rem;
+    border-top-right-radius: 0;
+  }
+  .main-nav__list {
+    display: flex;
+    justify-content: center;
+  }
+  .active .main-nav__list {
+    display: inline-block;
+    justify-content: center;
+  }
+  .main-nav__list--el {
+    font-size: 2.4rem;
+  }
+  .main-nav__content {
+    margin: 0;
+  }
+  .active.main-nav__content {
+    top: 7.8rem;
+  }
+  .main-nav__list--a {
+    margin: 1.2rem 0;
+  }
+  .active .main-nav__list--a {
+    margin: 0;
+  }
+  .rejestracja__aplikuj--nav,
+  .main-nav__background {
+    display: none;
+  }
+
+  /* TRENERZY ---------- */
+  .trenerzy .container {
+    padding: 0;
+  }
+  .trenerzy__container {
+    padding-top: 0;
+  }
+  .trener__kontent {
+    border-radius: 1.2rem;
+    margin: 1.2rem;
+    padding: 1.2rem;
+  }
+  .trener__kontent:nth-child(even) {
+    transform: translateX(0);
+  }
+  .trener__kontent:nth-child(odd) {
+    transform: translateX(0);
+  }
+  /* GALERIA */
+
+  .poprzednie-edycje__zdjecia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kontakt {
+    width: 88rem;
+  }
+  .faq {
+    width: 80rem;
+  }
+  .poziom__img img {
+    max-height: 32rem;
+  }
+  .szkolenia__poziomy {
+    flex-direction: row;
+    gap: 3.2rem;
+    padding-top: 3.2rem;
+  }
+  .szkolenia__poziom {
+    flex-direction: column;
+    width: 48%;
+    gap: 0;
+  }
+  .poziom__content {
+    order: 1;
+  }
+  .poziom1__ciekawostka {
+    order: 1;
+  }
+}
+/**************************/
+/* BELOW 1024px ----------------880px */
+/**************************/
+@media (max-width: 55em) {
+  .main-nav__list--el {
+    font-size: 2rem;
+  }
+  .active .main-nav__list--el {
+    font-size: 3.2rem;
+  }
+  .trenerzy .container {
+    margin: 0 0.6rem 0 0.6rem;
+  }
+  .trenerzy__opis-ogolny {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    padding: 0 2.4rem 2.4rem 2.4rem;
+  }
+
+  .rekomendacje-mobline__avatary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 1.2rem;
+  }
+  .rekomendacje__container {
+    display: none;
+  }
+  .kontakt {
+    width: 74rem;
+  }
+  .kontakt__content .sub-title {
+    font-size: 2.4rem;
+  }
+  .kontakt__decsription {
+    font-size: 2rem;
+  }
+  .kontakt__logo img {
+    height: 16rem;
+  }
+  .active.pictures__picture {
+    max-width: 80rem;
+  }
+}
+
+/**************************/
+/* BELOW 760px */
+/**************************/
+@media (max-width: 47.5em) {
+  .hero {
+    gap: 0;
+    padding: 0;
+  }
+  .main-nav {
+    height: 0;
+  }
+  .main-nav__content {
+    top: 100vh;
+  }
+  .active.main-nav__content {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.8;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(178, 2, 5, 0.9);
+    z-index: 9;
+  }
+  .active .main-nav__list--el {
+    font-size: 4.8rem;
+    text-align: center;
+  }
+  /* TRENERZY  */
+  .trener__kontent h3 {
+    font-size: 3.2rem;
+  }
+  .trener__kontent {
+    font-size: 2rem;
+  }
+  /* GALERIA  */
+  .poprzednie-edycje__container {
+    flex-direction: column;
+  }
+  .poprzednie-edycje__odnosniki {
+    max-width: 100%;
+  }
+  .poprzednie-edycje__zdjecia {
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 2.4rem;
+  }
+  .kontakt {
+    width: 70rem;
+  }
+  .active.pictures__picture {
+    max-width: 72rem;
+  }
+  .szkolenia__poziomy {
+    gap: 0;
+  }
+  .szkolenia__poziom {
+    width: 100%;
+  }
+  .poziom1__ciekawostka {
+    order: 0;
+    margin: 1.2rem 0 4.8rem 0;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+@media (max-width: 44em) {
+  html {
+    /* 7px / 16px = 0.4357 = 43.57% */
+    font-size: 43.57%;
+  }
+  .podsumowanie {
+    margin: 0;
+  }
+
+  /* TRENERZY  */
+
+  .trenerzy__container {
+    flex-direction: column;
+  }
+  .carousel__btns {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .trener__kontent {
+    font-size: 2.4rem;
+    padding: 2.4rem;
+    margin-top: 6.2rem;
+  }
+
+  .trener__kontent h3 {
+    padding-left: 14rem;
+  }
+
+  .trener__zdjecie {
+    display: none;
+  }
+  .trener__zdjecie--mobilne {
+    display: flex;
+    height: 12rem;
+    width: 12rem;
+    position: absolute;
+    left: -12rem;
+    bottom: -5rem;
+    transform: translate(18%, -50%);
+  }
+  .kontakt {
+    width: 52rem;
+  }
+  .kontakt__img-jpg {
+    position: absolute;
+    top: -4rem;
+    right: 8rem;
+    height: 16rem;
+  }
+  .active.pictures__picture {
+    max-width: 72rem;
+  }
+}
+/**************************/
+/* BELOW 544px (Phones) ---------- 610px*/
+/**************************/
+@media (max-width: 39em) {
+  .LTC-background {
+    background-image: linear-gradient(
+        rgba(247, 230, 230, 0.8) 12%,
+        #f7e6e6 15% 100%
+      ),
+      url(../imgs/backgrounds/bg.jpg);
+  }
+  .podsumowanie__benefit {
+    margin: 1.2rem 0 1.2rem 0;
+  }
+  .rejestracja {
+    background-position-x: -30rem;
+  }
+  .kontakt {
+    width: 47rem;
+  }
+  .kontakt__img-jpg {
+    right: 6rem;
+  }
+  .faq {
+    width: 60rem;
+  }
+  .map {
+    width: 48rem;
+    height: 24rem;
+  }
+  .active.pictures__picture {
+    max-width: 54rem;
+  }
+}
+
+/**************************/
+/* BELOW 476px */
+/**************************/
+@media (max-width: 30em) {
+  .LTC-background {
+    background-image: linear-gradient(
+        rgba(247, 230, 230, 0.8) 4%,
+        #f7e6e6 12% 100%
+      ),
+      url(../imgs/backgrounds/bg.jpg);
+  }
+  .partnerzy__partner {
+    width: 22rem;
+    height: 11rem;
+  }
+  .main-title {
+    font-size: 3.6rem;
+  }
+  .title {
+    font-size: 3rem;
+    padding-top: 1.2rem;
+  }
+  .rekomendacje__container-mobilny {
+    padding: 2.4rem 0 0 0;
+  }
+  .kontakt {
+    width: 38rem;
+  }
+  .kontakt__img-jpg {
+    right: 1.2rem;
+  }
+  .kontakt__logo img {
+    height: 12rem;
+  }
+  .kontakt__img-jpg {
+    height: 14rem;
+    top: -2rem;
+    right: 2.2rem;
+  }
+
+  .active.pictures__picture {
+    max-width: 40rem;
+  }
+
+  @media (max-height: 44em) {
+    .kontakt__logo img {
+      height: 10rem;
+    }
+  }
+  @media (max-height: 42em) {
+    .kontakt__logo {
+      display: none;
+    }
+  }
+  .faq {
+    width: 50rem;
+  }
+  .map {
+    margin: 0.6rem;
+    width: 38rem;
+  }
+}
+
+/**************************/
+/* BELOW 385px (Phones) */
+/**************************/
+@media (max-width: 24em) {
+  .faq {
+    width: 40rem;
+  }
+  .LTC-background {
+    background-image: linear-gradient(
+        rgba(247, 230, 230, 0.8) 4%,
+        #f7e6e6 8% 100%
+      ),
+      url(../imgs/backgrounds/bg.jpg);
+  }
+
+  .picture__btn {
+    position: absolute;
+    bottom: 1.2rem;
+  }
+  #picture__previous {
+    right: 50%;
+  }
+  #picture__next {
+    left: 50%;
+  }
+  .active.pictures__autor {
+    margin-left: 0;
+  }
+}
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
