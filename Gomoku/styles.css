@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+.sudoku {
+  display: flex;
+  justify-content: center;
+  color: #17683a;
+  margin: 1.2rem;
+}
+
+/* MAP ------------------------------------------------ */
+.map {
+  background-color: #17683a;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  gap: 0.1rem;
+  padding: 0.6rem;
+  height: 26rem;
+  width: 26rem;
+}
+.map__cell {
+  background-color: #e9f7ef;
+}
+.map__cell::before {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty:hover {
+  background-color: #bee7cf;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.map__cell.o::before,
+.map__cell.x::before {
+  color: #104626;
+}
+.map__cell.o::before,
+.map__cell.o-shadow::before {
+  content: "O";
+}
+.map__cell.x::before,
+.map__cell.x-shadow::before {
+  content: "X";
+}
+
+/* MENU -------------------------------------- */
+.sudoku__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 0.1rem solid #17683a;
+  gap: 2.4rem;
+  padding: 0.1rem;
+}
+.menu__players {
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.players__player-name.active {
+  font-weight: 600;
+}
+
+.menu__log {
+  overflow-y: scroll;
+  height: 10rem;
+  width: 100%;
+  padding-left: 0.6rem;
+}
+.menu__exit {
+  padding: 0.6rem 1.2rem;
+  background-color: #104626;
+  color: #e9f7ef;
+  cursor: pointer;
+}
+.menu__exit:active {
+  background-color: #17683a;
+}
+
+/* width */
+.menu__log::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* Track */
+.menu__log::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.menu__log::-webkit-scrollbar-thumb {
+  background: #17683a;
+}
+
+/* Handle on hover */
+.menu__log::-webkit-scrollbar-thumb:hover {
+  background: #104626;
+}
