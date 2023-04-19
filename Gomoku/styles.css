@@ -6,11 +6,45 @@
 body {
   font-family: sans-serif;
 }
+
+.disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari                           */
+  -webkit-user-select: none; /* Safari                               */
+  -khtml-user-select: none; /* Konqueror HTML                       */
+  -moz-user-select: none; /* Firefox w przeszłości (stare wersje) */
+  -ms-user-select: none; /* Internet Explorer (>=10) / Edge      */
+  user-select: none; /* Aktualnie wspierane przez:           */
+  /* Chrome, Opera and Firefox            */
+}
+
 .sudoku {
   display: flex;
   justify-content: center;
   color: #17683a;
   margin: 1.2rem;
+  position: relative;
+}
+.sudoku__alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: rgba(23, 104, 58, 0.9);
+  border-radius: 0.6rem;
+  color: #fff;
+  padding: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+.sudoku__alert.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: visible;
 }
 
 /* MAP ------------------------------------------------ */
@@ -27,6 +61,7 @@ body {
 .map__cell {
   background-color: #e9f7ef;
 }
+
 .map__cell::before {
   font-size: 1.2rem;
   font-weight: 600;
@@ -44,6 +79,10 @@ body {
 .map__cell.o::before,
 .map__cell.x::before {
   color: #104626;
+  transition: all 0.4s;
+}
+.map__cell.winner::before {
+  color: #ff0000;
 }
 .map__cell.o::before,
 .map__cell.o-shadow::before {
@@ -61,6 +100,8 @@ body {
   align-items: center;
   justify-content: space-around;
   border: 0.1rem solid #17683a;
+  border-bottom-left-radius: 0.6rem;
+  border-top-left-radius: 0.6rem;
   gap: 2.4rem;
   padding: 0.1rem;
 }
@@ -86,6 +127,8 @@ body {
 .menu__exit {
   padding: 0.6rem 1.2rem;
   background-color: #104626;
+  border-radius: 0.6rem;
+  border: none;
   color: #e9f7ef;
   cursor: pointer;
 }
