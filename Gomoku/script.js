@@ -1,3 +1,6 @@
+import { createBoard, Y_INDEXES } from './createBoard.js'
+createBoard()
+
 let activePlayer = true;
 const cells = document.querySelectorAll(".empty");
 const namePlayer1 = document.querySelector(".player-name--1");
@@ -11,25 +14,9 @@ let player2 = "Czesław";
 let end = false;
 
 //SETUP ------------------------------------
+
 let mapa = [];
 (() => {
-  const alfabet = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-  ];
   namePlayer1.innerHTML = player1;
   namePlayer2.innerHTML = player2;
   for (let i = 0; i < 15; i++) {
@@ -37,7 +24,7 @@ let mapa = [];
   }
   for (let i = 0; i < 15; i++) {
     for (let j = 1; j <= 15; j++) {
-      mapa[i][j - 1] = alfabet[i] + j;
+      mapa[i][j - 1] = Y_INDEXES[i] + j;
     }
   }
 })();
