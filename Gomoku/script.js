@@ -78,7 +78,7 @@ function endGame(mode, player, i, j) {
   end = true;
 }
 
-function whoWin(player) {
+function checkEndGame(player) {
   for (let i = 0; i < 15; i++) {
     for (let j = 0; j < 11; j++) {
       if (
@@ -154,7 +154,7 @@ cells.forEach(function (cell) {
       if (activePlayer) {
         cell.classList.add("x");
         addSymbol(player1, cell.id);
-        whoWin(player1);
+        checkEndGame(player1);
         if (!end) {
           namePlayer2.classList.add("active");
           namePlayer1.classList.remove("active");
@@ -163,7 +163,7 @@ cells.forEach(function (cell) {
       if (!activePlayer) {
         cell.classList.add("o");
         addSymbol(player2, cell.id);
-        whoWin(player2);
+        checkEndGame(player2);
         if (!end) {
           namePlayer1.classList.add("active");
           namePlayer2.classList.remove("active");
