@@ -78,7 +78,7 @@ function endGame(mode, player, i, j) {
   end = true;
 }
 
-function checkEndGame(player) {
+const checkEndGameHorizontal = (player) => {
   for (let i = 0; i < 15; i++) {
     for (let j = 0; j < 11; j++) {
       if (
@@ -92,7 +92,9 @@ function checkEndGame(player) {
       }
     }
   }
+};
 
+const checkEndGameVertical = (player) => {
   for (let i = 0; i < 11; i++) {
     for (let j = 0; j < 15; j++) {
       if (
@@ -106,7 +108,9 @@ function checkEndGame(player) {
       }
     }
   }
+}
 
+const checkEndGameDiagonalRight = (player) => {
   for (let i = 0; i < 11; i++) {
     for (let j = 0; j < 11; j++) {
       if (
@@ -120,7 +124,9 @@ function checkEndGame(player) {
       }
     }
   }
+}
 
+const checkEndGameDiagonalLeft = (player) => {
   for (let i = 4; i < 15; i++) {
     for (let j = 0; j < 11; j++) {
       if (
@@ -134,6 +140,14 @@ function checkEndGame(player) {
       }
     }
   }
+}
+
+
+function checkEndGame(player) {
+  checkEndGameHorizontal(player);
+  checkEndGameVertical(player);
+  checkEndGameDiagonalRight(player);
+  checkEndGameDiagonalLeft(player);
 }
 
 //EXIT BUTTON ---------------------------------------------------------
