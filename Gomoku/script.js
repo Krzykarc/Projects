@@ -1,3 +1,6 @@
+import { createBoard, Y_INDEXES } from './createBoard.js'
+createBoard()
+
 let activePlayer = true;
 const cells = document.querySelectorAll(".empty");
 const namePlayer1 = document.querySelector(".player-name--1");
@@ -11,33 +14,17 @@ let player2 = "Czesław";
 let end = false;
 
 //SETUP ------------------------------------
-let mapa = [];
+
+let map = [];
 (() => {
-  const alfabet = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-  ];
   namePlayer1.innerHTML = player1;
   namePlayer2.innerHTML = player2;
   for (let i = 0; i < 15; i++) {
-    mapa[i] = [];
+    map[i] = [];
   }
   for (let i = 0; i < 15; i++) {
     for (let j = 1; j <= 15; j++) {
-      mapa[i][j - 1] = alfabet[i] + j;
+      map[i][j - 1] = Y_INDEXES[i] + j;
     }
   }
 })();
@@ -46,8 +33,8 @@ function addSymbol(player, koordy) {
   let stringKoordy = koordy.toString();
   for (let i = 0; i < 15; i++) {
     for (let j = 0; j < 15; j++) {
-      if (mapa[i][j] === stringKoordy) {
-        mapa[i][j] = player;
+      if (map[i][j] === stringKoordy) {
+        map[i][j] = player;
       }
     }
   }
@@ -91,62 +78,76 @@ function endGame(mode, player, i, j) {
   end = true;
 }
 
-function whoWin(player) {
+const checkEndGameHorizontal = (player) => {
   for (let i = 0; i < 15; i++) {
     for (let j = 0; j < 11; j++) {
       if (
-        mapa[i][j] === player &&
-        mapa[i][j + 1] === player &&
-        mapa[i][j + 2] === player &&
-        mapa[i][j + 3] === player &&
-        mapa[i][j + 4] === player
+        map[i][j] === player &&
+        map[i][j + 1] === player &&
+        map[i][j + 2] === player &&
+        map[i][j + 3] === player &&
+        map[i][j + 4] === player
       ) {
         endGame("poziom", player, i, j);
       }
     }
   }
+};
 
+const checkEndGameVertical = (player) => {
   for (let i = 0; i < 11; i++) {
     for (let j = 0; j < 15; j++) {
       if (
-        mapa[i][j] === player &&
-        mapa[i + 1][j] === player &&
-        mapa[i + 2][j] === player &&
-        mapa[i + 3][j] === player &&
-        mapa[i + 4][j] === player
+        map[i][j] === player &&
+        map[i + 1][j] === player &&
+        map[i + 2][j] === player &&
+        map[i + 3][j] === player &&
+        map[i + 4][j] === player
       ) {
         endGame("pion", player, i, j);
       }
     }
   }
+}
 
+const checkEndGameDiagonalRight = (player) => {
   for (let i = 0; i < 11; i++) {
     for (let j = 0; j < 11; j++) {
       if (
-        mapa[i][j] === player &&
-        mapa[i + 1][j + 1] === player &&
-        mapa[i + 2][j + 2] === player &&
-        mapa[i + 3][j + 3] === player &&
-        mapa[i + 4][j + 4] === player
+        map[i][j] === player &&
+        map[i + 1][j + 1] === player &&
+        map[i + 2][j + 2] === player &&
+        map[i + 3][j + 3] === player &&
+        map[i + 4][j + 4] === player
       ) {
         endGame("skos1", player, i, j);
       }
     }
   }
+}
 
+const checkEndGameDiagonalLeft = (player) => {
   for (let i = 4; i < 15; i++) {
     for (let j = 0; j < 11; j++) {
       if (
-        mapa[i][j] === player &&
-        mapa[i - 1][j + 1] === player &&
-        mapa[i - 2][j + 2] === player &&
-        mapa[i - 3][j + 3] === player &&
-        mapa[i - 4][j + 4] === player
+        map[i][j] === player &&
+        map[i - 1][j + 1] === player &&
+        map[i - 2][j + 2] === player &&
+        map[i - 3][j + 3] === player &&
+        map[i - 4][j + 4] === player
       ) {
         endGame("skos2", player, i, j);
       }
     }
   }
+}
+
+
+function checkEndGame(player) {
+  checkEndGameHorizontal(player);
+  checkEndGameVertical(player);
+  checkEndGameDiagonalRight(player);
+  checkEndGameDiagonalLeft(player);
 }
 
 //EXIT BUTTON ---------------------------------------------------------
@@ -167,7 +168,7 @@ cells.forEach(function (cell) {
       if (activePlayer) {
         cell.classList.add("x");
         addSymbol(player1, cell.id);
-        whoWin(player1);
+        checkEndGame(player1);
         if (!end) {
           namePlayer2.classList.add("active");
           namePlayer1.classList.remove("active");
@@ -176,7 +177,7 @@ cells.forEach(function (cell) {
       if (!activePlayer) {
         cell.classList.add("o");
         addSymbol(player2, cell.id);
-        whoWin(player2);
+        checkEndGame(player2);
         if (!end) {
           namePlayer1.classList.add("active");
           namePlayer2.classList.remove("active");
